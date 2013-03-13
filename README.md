@@ -23,6 +23,6 @@ Enforce orientation no matter what the status bar orientation is
 Cocoa pods
 -------
     
-Pod spec is to be found ![here](https://github.com/CocoaPods/Specs/blob/master/AGWindowView/0.1.1/AGWindowView.podspec).
+It is added to the public cocoa pods spec repository under the name `AGWindowView`.
     
 [![Agens | Digital craftsmanship](http://static.agens.no/images/agens_logo_w_slogan_avenir_small.png)](http://agens.no/)
