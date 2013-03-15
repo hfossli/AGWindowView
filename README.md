@@ -14,11 +14,14 @@ Support the current orientation the status bar might have
     windowView.supportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
     [windowView addSubview:view];
     
-Enforce orientation no matter what the status bar orientation is
+Slide up say a video player in landscape even though your app is in portrait
 
     AGWindowView *windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
-    windowView.supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
-    [windowView addSubview:view];
+    windowView.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeLeft;
+    [windowView addSubviewAndFillBounds:player.view withSlideUpAnimationOnDone:nil];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+
+Note: this won't actually rotate the statusbar, just the AGWindow. 
 
 Cocoa pods
 -------
