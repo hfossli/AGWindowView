@@ -5,7 +5,17 @@ AGWindowView is a UIView which can be added directly to UIWindow. It handles rot
 
 You can have as many AGWindowView's you want. We're using it in Agens for custom alerts, but it can be used for anything. 
 
-Example of usage
+Usage
+------
+
+It can be used in a number of different situations.
+
+- display something fullscreen
+- your app is in portrait and you want to play video in fullscreen landscape
+- show custom modals in specific orientations
+- display custom alerts on top of UI
+
+Code examples
 -------
 
 Support the current orientation the status bar might have
