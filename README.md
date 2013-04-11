@@ -23,6 +23,13 @@ Slide up say a video player in landscape even though your app is in portrait
 
 Note: this won't actually rotate the statusbar, just the AGWindow. 
 
+Debug - Notes
+-----
+
+Please note that we are using `UIInterfaceOrientationMask` and not `UIInterfaceOrientation` for the property `supportedInterfaceOrientations`.
+
+I highly encourage either to set `supportedInterfaceOrientations = UIInterfaceOrientationMaskAll` or only use one of the orientations e.g. `supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait`. Mixing will be supported, but currently undergoes unexpected results.
+
 Cocoa pods
 -------
     
