@@ -32,8 +32,26 @@ static NSMutableArray *_activeWindowViews;
 
 @implementation AGWindowView
 
-#if ! __has_feature(objc_arc)
-#error Requires ARC
+#if __has_feature(objc_arc)
+# define AGWV_RETAIN(xx) do { \
+    _Pragma("clang diagnostic ignored \"-Wunused-value\"")\
+    xx;\
+    _Pragma("clang diagnostic pop")\
+    } while(0)
+# define AGWV_RELEASE(xx) do { \
+    _Pragma("clang diagnostic ignored \"-Wunused-value\"")\
+    xx;\
+    _Pragma("clang diagnostic pop")\
+    } while(0)
+# define AGWV_AUTORELEASE(xx) do { \
+    _Pragma("clang diagnostic ignored \"-Wunused-value\"")\
+    xx;\
+    _Pragma("clang diagnostic pop")\
+    } while(0)
+#else
+# define AGWV_RETAIN(xx)            [xx retain]
+# define AGWV_RELEASE(xx)           [xx release]
+# define AGWV_AUTORELEASE(xx)       [xx autorelease]
 #endif
 
 #pragma mark - Construct, destruct and setup
@@ -196,16 +214,36 @@ static NSMutableArray *_activeWindowViews;
 - (void)didMoveToWindow
 {
     [super didMoveToWindow];
+        
     if(self.window == nil)
     {
         self.onDidMoveOutOfWindow ? self.onDidMoveOutOfWindow() : nil;
+        AGWV_RETAIN(self);
+        AGWV_AUTORELEASE(self);
         [_activeWindowViews removeObject:self];
     }
     else
     {
+        [self assertCorrectHirearchy];
         self.onDidMoveToWindow ? self.onDidMoveToWindow() : nil;
         [_activeWindowViews addObject:self];
         [self rotateAccordingToStatusBarOrientationAndSupportedOrientations];
+    }
+}
+
+
+- (void)assertCorrectHirearchy
+{
+    if(self.window != nil)
+    {
+        if(self.superview != self.window)
+        {
+            [NSException raise:NSInternalInconsistencyException format:@"AGWindowView should only be added directly on UIWindow"];
+        }
+        if([self.window.subviews indexOfObject:self] == 0)
+        {
+            [NSException raise:NSInternalInconsistencyException format:@"AGWindowView is not meant to be first subview on window since UIWindow automatically rotates the first view for you."];
+        }
     }
 }
 
@@ -220,7 +258,7 @@ static NSMutableArray *_activeWindowViews;
 {
     if(view.superview == nil)
     {
-        [NSException raise:NSInternalInconsistencyException format:@"When calling moveViewToKeyWindow: we are expecting the view to be moved is already in a view hirearchy."];
+        [NSException raise:NSInternalInconsistencyException format:@"When calling %s we are expecting the view to be moved is already in a view hirearchy.", __PRETTY_FUNCTION__];
     }
     
     view.frame = [view convertRect:view.bounds toView:self];
