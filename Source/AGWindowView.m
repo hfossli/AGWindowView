@@ -34,16 +34,19 @@ static NSMutableArray *_activeWindowViews;
 
 #if __has_feature(objc_arc)
 # define AGWV_RETAIN(xx) do { \
+    _Pragma("clang diagnostic push")\
     _Pragma("clang diagnostic ignored \"-Wunused-value\"")\
     xx;\
     _Pragma("clang diagnostic pop")\
     } while(0)
 # define AGWV_RELEASE(xx) do { \
+    _Pragma("clang diagnostic push")\
     _Pragma("clang diagnostic ignored \"-Wunused-value\"")\
     xx;\
     _Pragma("clang diagnostic pop")\
     } while(0)
 # define AGWV_AUTORELEASE(xx) do { \
+    _Pragma("clang diagnostic push")\
     _Pragma("clang diagnostic ignored \"-Wunused-value\"")\
     xx;\
     _Pragma("clang diagnostic pop")\
