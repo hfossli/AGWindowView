@@ -261,7 +261,7 @@ static NSMutableArray *_activeWindowViews;
 {
     if(view.superview == nil)
     {
-        [NSException raise:NSInternalInconsistencyException format:@"When calling %s we are expecting the view to be moved is already in a view hirearchy.", __PRETTY_FUNCTION__];
+        [NSException raise:NSInternalInconsistencyException format:@"When calling %s we are expecting the view to be moved is already in a view hierarchy.", __PRETTY_FUNCTION__];
     }
     
     view.frame = [view convertRect:view.bounds toView:self];
