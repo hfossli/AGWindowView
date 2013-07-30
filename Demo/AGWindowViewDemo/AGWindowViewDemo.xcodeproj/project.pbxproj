@@ -30,7 +30,6 @@
 		A34724691716AF4C0059DAD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A347242F1716AF4B0059DAD1 /* UIKit.framework */; };
 		A347246A1716AF4C0059DAD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34724311716AF4B0059DAD1 /* Foundation.framework */; };
 		A34724721716AF4C0059DAD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A34724701716AF4C0059DAD1 /* InfoPlist.strings */; };
-		A34724751716AF4C0059DAD1 /* AGWindowViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A34724741716AF4C0059DAD1 /* AGWindowViewDemoTests.m */; };
 		A34724821716AF610059DAD1 /* AGWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A34724801716AF610059DAD1 /* AGWindowView.m */; };
 		A34724841716AF640059DAD1 /* AGWindowViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A34724811716AF610059DAD1 /* AGWindowViewTest.m */; };
 		A34724851716AF670059DAD1 /* AGWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A34724801716AF610059DAD1 /* AGWindowView.m */; };
@@ -40,6 +39,7 @@
 		A347248B1716AF710059DAD1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A34724871716AF710059DAD1 /* README.md */; };
 		A347248D1716B35C0059DAD1 /* 36532.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A347248C1716B35C0059DAD1 /* 36532.jpg */; };
 		A347248E1716B35C0059DAD1 /* 36532.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A347248C1716B35C0059DAD1 /* 36532.jpg */; };
+		A3ECC50B17A7B699008740EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34724331716AF4B0059DAD1 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +82,6 @@
 		A34724671716AF4C0059DAD1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A347246F1716AF4C0059DAD1 /* AGWindowViewDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AGWindowViewDemoTests-Info.plist"; sourceTree = "<group>"; };
 		A34724711716AF4C0059DAD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A34724731716AF4C0059DAD1 /* AGWindowViewDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGWindowViewDemoTests.h; sourceTree = "<group>"; };
-		A34724741716AF4C0059DAD1 /* AGWindowViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGWindowViewDemoTests.m; sourceTree = "<group>"; };
 		A347247F1716AF610059DAD1 /* AGWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGWindowView.h; sourceTree = "<group>"; };
 		A34724801716AF610059DAD1 /* AGWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGWindowView.m; sourceTree = "<group>"; };
 		A34724811716AF610059DAD1 /* AGWindowViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGWindowViewTest.m; sourceTree = "<group>"; };
@@ -110,6 +108,7 @@
 				A34724681716AF4C0059DAD1 /* SenTestingKit.framework in Frameworks */,
 				A34724691716AF4C0059DAD1 /* UIKit.framework in Frameworks */,
 				A347246A1716AF4C0059DAD1 /* Foundation.framework in Frameworks */,
+				A3ECC50B17A7B699008740EB /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,8 +188,6 @@
 		A347246D1716AF4C0059DAD1 /* AGWindowViewDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				A34724731716AF4C0059DAD1 /* AGWindowViewDemoTests.h */,
-				A34724741716AF4C0059DAD1 /* AGWindowViewDemoTests.m */,
 				A347246E1716AF4C0059DAD1 /* Supporting Files */,
 			);
 			path = AGWindowViewDemoTests;
@@ -352,7 +349,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A34724751716AF4C0059DAD1 /* AGWindowViewDemoTests.m in Sources */,
 				A34724841716AF640059DAD1 /* AGWindowViewTest.m in Sources */,
 				A34724851716AF670059DAD1 /* AGWindowView.m in Sources */,
 			);
@@ -553,6 +549,7 @@
 				A347247A1716AF4C0059DAD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A347247B1716AF4C0059DAD1 /* Build configuration list for PBXNativeTarget "AGWindowViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +558,7 @@
 				A347247D1716AF4C0059DAD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

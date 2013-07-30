@@ -51,31 +51,17 @@
 - (void)testAngleForOrientations
 {
     {
-        CGFloat angle = UIInterfaceOrientationAngleBetweenOrientations(UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft);
+        CGFloat angle = UIInterfaceOrientationAngleBetween(UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft);
         STAssertEquals(angle, (CGFloat)M_PI_2, nil);
     }
     {
-        CGFloat angle = UIInterfaceOrientationAngleBetweenOrientations(UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationPortraitUpsideDown);
+        CGFloat angle = UIInterfaceOrientationAngleBetween(UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationPortraitUpsideDown);
         STAssertEquals(angle, (CGFloat)-M_PI_2 * 3, nil);
     }
     {
-        CGFloat angle = UIInterfaceOrientationAngleBetweenOrientations(UIInterfaceOrientationPortrait, UIInterfaceOrientationPortrait); 
+        CGFloat angle = UIInterfaceOrientationAngleBetween(UIInterfaceOrientationPortrait, UIInterfaceOrientationPortrait); 
         STAssertEquals(angle, (CGFloat)0.0, nil);
     }
-}
-
-- (void)testEdge
-{
-    CGRect statusBarFrame = CGRectMake(0, 0, 1024, 20);
-    CGRect windowBounds = CGRectMake(0, 0, 1024, 768);
-    
-    CGRectEdge edge = CGRectEdgeForRectPlacedAlongEdgeOfRect(windowBounds, statusBarFrame);
-    STAssertEquals(edge, CGRectMinYEdge, nil);
-}
-
-- (void)testCalculateFrame
-{
-    
 }
 
 @end
