@@ -60,7 +60,7 @@ static NSMutableArray *_activeWindowViews;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _activeWindowViews = [NSMutableArray array];
+        _activeWindowViews = [[NSMutableArray alloc] init];
     });
 }
 
@@ -250,6 +250,10 @@ static NSMutableArray *_activeWindowViews;
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    #if ! __has_feature(objc_arc)
+        [super dealloc];
+    #endif
 }
 
 #pragma mark - Presentation
