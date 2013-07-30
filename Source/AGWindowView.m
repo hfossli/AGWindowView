@@ -346,7 +346,7 @@ static NSMutableArray *_activeWindowViews;
     return index == subviewsOnSuperview.count - 1;
 }
 
-#pragma mark - Convinience methods
+#pragma mark - Convenience methods
 
 + (NSArray *)allActiveWindowViews
 {
