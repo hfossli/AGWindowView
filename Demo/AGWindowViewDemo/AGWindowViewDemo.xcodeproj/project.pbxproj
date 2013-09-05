@@ -89,6 +89,7 @@
 		A34724871716AF710059DAD1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
 		A347248C1716B35C0059DAD1 /* 36532.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 36532.jpg; sourceTree = "<group>"; };
 		A3BC981F17D8D4F6009B7495 /* AGWindowViewDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGWindowViewDefines.h; sourceTree = "<group>"; };
+		A3BC982017D8F695009B7495 /* AGWindowView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = AGWindowView.podspec; path = ../../AGWindowView.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 				A347246D1716AF4C0059DAD1 /* AGWindowViewDemoTests */,
 				A347242E1716AF4B0059DAD1 /* Frameworks */,
 				A347242D1716AF4B0059DAD1 /* Products */,
+				A3BC982017D8F695009B7495 /* AGWindowView.podspec */,
 			);
 			sourceTree = "<group>";
 		};
