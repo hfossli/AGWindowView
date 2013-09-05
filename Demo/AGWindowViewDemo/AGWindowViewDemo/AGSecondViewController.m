@@ -36,7 +36,7 @@
 {
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     AGWindowView *windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
-    windowView.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeLeft;
+    windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscapeLeft;
     [windowView addSubviewAndFillBounds:self.landscapeView withSlideUpAnimationOnDone:^{
         
     }];

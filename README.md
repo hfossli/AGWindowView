@@ -22,13 +22,13 @@ Code examples
 Support the current orientation the status bar might have
 
     AGWindowView *windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
-    windowView.supportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
+    windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskAll;
     [windowView addSubview:view];
     
 Slide up say a video player in landscape even though your app is in portrait
 
     AGWindowView *windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
-    windowView.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeLeft;
+    windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscapeLeft;
     [windowView addSubviewAndFillBounds:player.view withSlideUpAnimationOnDone:nil];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 
@@ -37,9 +37,9 @@ Note: this won't actually rotate the statusbar, just the AGWindow.
 Debug - Notes
 -----
 
-Please note that we are using `UIInterfaceOrientationMask` and not `UIInterfaceOrientation` for the property `supportedInterfaceOrientations`.
+Please note that we are using `AGInterfaceOrientationMask` and not `UIInterfaceOrientation` for the property `supportedInterfaceOrientations`.
 
-I highly encourage either to set `supportedInterfaceOrientations = UIInterfaceOrientationMaskAll` or only use one of the orientations e.g. `supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait`. Mixing will be supported, but currently undergoes unexpected results.
+I highly encourage either to set `supportedInterfaceOrientations = AGInterfaceOrientationMaskAll` or only use one of the orientations e.g. `supportedInterfaceOrientations = AGInterfaceOrientationMaskPortrait`. Mixing will be supported, but currently undergoes unexpected results.
 
 Cocoa pods
 -------

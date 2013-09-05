@@ -23,6 +23,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AGWindowViewDefines.h"
 
 /**
  * @class AGWindowView
@@ -31,7 +32,7 @@
 
 @interface AGWindowView : UIView
 
-@property (nonatomic, assign) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, assign) AGInterfaceOrientationMask supportedInterfaceOrientations;
 
 /**
  * @property UIViewController *controller. Convinience for having a strong reference to your controller.
@@ -64,6 +65,6 @@
 BOOL UIInterfaceOrientationsIsForSameAxis(UIInterfaceOrientation o1, UIInterfaceOrientation o2);
 CGFloat UIInterfaceOrientationAngleBetween(UIInterfaceOrientation o1, UIInterfaceOrientation o2);
 CGFloat UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orientation);
-UIInterfaceOrientationMask UIInterfaceOrientationMaskFromOrientation(UIInterfaceOrientation orientation);
+AGInterfaceOrientationMask AGInterfaceOrientationMaskFromOrientation(UIInterfaceOrientation orientation);
 
 @end

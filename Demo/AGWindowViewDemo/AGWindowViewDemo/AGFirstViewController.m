@@ -47,7 +47,7 @@
         
         [UIView animateWithDuration:0.3 animations:^{
             
-            windowView.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeLeft;
+            windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscapeLeft;
             
         } completion:^(BOOL finished) {
             
