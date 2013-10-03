@@ -175,13 +175,27 @@ static NSMutableArray *_activeWindowViews;
     }
 }
 
+static BOOL IS_BELOW_IOS_7()
+{
+    static BOOL answer;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        answer = [[[UIDevice currentDevice] systemVersion] floatValue] < 7.0;
+    });
+    return answer;
+}
+
 + (CGRect)rectInWindowBounds:(CGRect)windowBounds statusBarOrientation:(UIInterfaceOrientation)statusBarOrientation statusBarHeight:(CGFloat)statusBarHeight
 {    
     CGRect frame = windowBounds;
-    frame.origin.x += statusBarOrientation == UIInterfaceOrientationLandscapeLeft ? statusBarHeight : 0;
-    frame.origin.y += statusBarOrientation == UIInterfaceOrientationPortrait ? statusBarHeight : 0;
-    frame.size.width -= UIInterfaceOrientationIsLandscape(statusBarOrientation) ? statusBarHeight : 0;
-    frame.size.height -= UIInterfaceOrientationIsPortrait(statusBarOrientation) ? statusBarHeight : 0;
+
+    if(IS_BELOW_IOS_7())
+    {
+        frame.origin.x += statusBarOrientation == UIInterfaceOrientationLandscapeLeft ? statusBarHeight : 0;
+        frame.origin.y += statusBarOrientation == UIInterfaceOrientationPortrait ? statusBarHeight : 0;
+        frame.size.width -= UIInterfaceOrientationIsLandscape(statusBarOrientation) ? statusBarHeight : 0;
+        frame.size.height -= UIInterfaceOrientationIsPortrait(statusBarOrientation) ? statusBarHeight : 0;
+    }
     return frame;
 }
 
