@@ -34,7 +34,15 @@ typedef NS_OPTIONS(NSUInteger, AGInterfaceOrientationMask) {
     AGInterfaceOrientationMaskAllButUpsideDown = (AGInterfaceOrientationMaskPortrait | AGInterfaceOrientationMaskLandscapeLeft | AGInterfaceOrientationMaskLandscapeRight),
 };
 #else
-typedef AGInterfaceOrientationMask UIInterfaceOrientationMask;
+typedef NS_OPTIONS(NSUInteger, AGInterfaceOrientationMask) {
+    AGInterfaceOrientationMaskPortrait = (1 << UIInterfaceOrientationPortrait),
+    AGInterfaceOrientationMaskLandscapeLeft = (1 << UIInterfaceOrientationLandscapeLeft),
+    AGInterfaceOrientationMaskLandscapeRight = (1 << UIInterfaceOrientationLandscapeRight),
+    AGInterfaceOrientationMaskPortraitUpsideDown = (1 << UIInterfaceOrientationPortraitUpsideDown),
+    AGInterfaceOrientationMaskLandscape = (UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight),
+    AGInterfaceOrientationMaskAll = (UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskPortraitUpsideDown),
+    AGInterfaceOrientationMaskAllButUpsideDown = (UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight),
+};
 #endif
 
 
