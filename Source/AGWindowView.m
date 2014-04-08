@@ -273,6 +273,18 @@ static BOOL IS_BELOW_IOS_7()
     #endif
 }
 
+#pragma mark - Hit test
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    id hitView = [super hitTest:point withEvent:event];
+    if (hitView == self && self.onlySubviewsCapturesTouch)
+    {
+        return nil;
+    }
+    return hitView;
+}
+
 #pragma mark - Presentation
 
 - (void)addSubViewAndKeepSamePosition:(UIView *)view

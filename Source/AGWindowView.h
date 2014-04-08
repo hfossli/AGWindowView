@@ -40,6 +40,7 @@
 @property (nonatomic, strong) UIViewController *controller;
 @property (nonatomic, copy) void (^onDidMoveToWindow)(void);
 @property (nonatomic, copy) void (^onDidMoveOutOfWindow)(void);
+@property (nonatomic, assign) BOOL onlySubviewsCapturesTouch;
 
 - (id)initAndAddToWindow:(UIWindow *)window;
 - (id)initAndAddToKeyWindow;
