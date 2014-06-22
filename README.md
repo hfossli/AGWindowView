@@ -1,9 +1,9 @@
 AGWindowView
 ============
 
-AGWindowView is a UIView which can be added directly to UIWindow. It handles rotation and frame changes of statusbar for you.
+Add as many UIView's to UIWindow as you want. Specify the orientation or just follow the status bar. Status bar height is taken into account and you don't have to worry about a thing. 
 
-You can have as many AGWindowView's you want. We're using it in Agens for custom alerts, but it can be used for anything. Should not be used as the first view on window.
+We're using it in Agens for custom alerts, but it can be used for anything. Should not be used as the first view on window.
 
 Usage
 ------
