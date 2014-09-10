@@ -140,10 +140,21 @@ static NSMutableArray *_activeWindowViews;
 - (void)rotateAccordingToStatusBarOrientationAndSupportedOrientations
 {
     UIInterfaceOrientation orientation = [self desiredOrientation];
-    CGFloat angle = UIInterfaceOrientationAngleOfOrientation(orientation);
     CGFloat statusBarHeight = [[self class] getStatusBarHeight];
     UIInterfaceOrientation statusBarOrientation = [UIApplication sharedApplication].statusBarOrientation;
-    
+
+    CGFloat angle = 0.0;
+
+    // window rotates differently on iOS 8
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1)
+    {
+        angle = UIInterfaceOrientationAngleOfOrientation(orientation);
+    }
+    else
+    {
+        angle = UIInterfaceOrientationAngleBetween(orientation, statusBarOrientation);
+    }
+
     CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
     CGRect frame = [[self class] rectInWindowBounds:self.window.bounds statusBarOrientation:statusBarOrientation statusBarHeight:statusBarHeight];
     
@@ -445,7 +456,6 @@ CGFloat UIInterfaceOrientationAngleBetween(UIInterfaceOrientation o1, UIInterfac
 CGFloat UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orientation)
 {
     CGFloat angle;
-    
     switch (orientation)
     {
         case UIInterfaceOrientationPortraitUpsideDown:
@@ -461,7 +471,6 @@ CGFloat UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orientat
             angle = 0.0;
             break;
     }
-    
     return angle;
 }
 
