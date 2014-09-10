@@ -10,29 +10,29 @@
 	<string>AGWindowViewDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D0FD6DFD-548A-4538-AEBF-BC4EA0E79ACD</key>
+		<key>4DE40EECFAA16A61BDCCCC3D1E4E638D0CA62409</key>
 		<string>ssh://github.com/hfossli/AGWindowView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Demo/AGWindowViewDemo.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D0FD6DFD-548A-4538-AEBF-BC4EA0E79ACD</key>
+		<key>4DE40EECFAA16A61BDCCCC3D1E4E638D0CA62409</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/hfossli/AGWindowView.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D0FD6DFD-548A-4538-AEBF-BC4EA0E79ACD</string>
+	<string>4DE40EECFAA16A61BDCCCC3D1E4E638D0CA62409</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D0FD6DFD-548A-4538-AEBF-BC4EA0E79ACD</string>
+			<string>4DE40EECFAA16A61BDCCCC3D1E4E638D0CA62409</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AGWindowView</string>
 		</dict>
