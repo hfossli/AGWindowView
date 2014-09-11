@@ -24,9 +24,6 @@
 #import "AGWindowView.h"
 #import <QuartzCore/QuartzCore.h>
 
-/*
- In the iOS 7 SDK apple forgot to add these constants
- */
 #ifndef NSFoundationVersionNumber_iOS_7_0
 # define NSFoundationVersionNumber_iOS_7_0 1047.20
 #endif
