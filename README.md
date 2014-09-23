@@ -1,9 +1,14 @@
-AGWindowView
+AGWindowView 
 ============
 
 Add as many UIView's to UIWindow as you want. Specify the orientation or just follow the status bar. Status bar height is taken into account and you don't have to worry about a thing. 
 
 We're using it in Agens for custom alerts, but it can be used for anything. Should not be used as the first view on window.
+
+iOS 5 ~ iOS 8 and SDK's
+-----------------------
+AGWindowView is compatible with modern combinations of build SDK's and iOS system versions (iOS 5 ~ iOS 8).
+
 
 Usage
 ------
