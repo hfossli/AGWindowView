@@ -57,7 +57,7 @@ static NSMutableArray *_activeWindowViews;
 # define AGWV_AUTORELEASE(xx)       [xx autorelease]
 #endif
 
-#pragma mark - Construct, destruct and setup
+#pragma mark - Lifecycle
 
 + (void)initialize
 {
@@ -117,6 +117,17 @@ static NSMutableArray *_activeWindowViews;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarFrameOrOrientationChanged:) name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
 }
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+#if ! __has_feature(objc_arc)
+    [super dealloc];
+#endif
+}
+
+#pragma mark - Handling
 
 - (void)setSupportedInterfaceOrientations:(AGInterfaceOrientationMask)supportedInterfaceOrientations
 {
@@ -288,15 +299,6 @@ static BOOL IS_IOS_8_OR_HIGHER()
             [NSException raise:NSInternalInconsistencyException format:@"AGWindowView is not meant to be first subview on window since UIWindow automatically rotates the first view for you."];
         }
     }
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-    #if ! __has_feature(objc_arc)
-        [super dealloc];
-    #endif
 }
 
 #pragma mark - Hit test
