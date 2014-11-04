@@ -24,14 +24,6 @@
 #import "AGWindowView.h"
 #import <QuartzCore/QuartzCore.h>
 
-#ifndef NSFoundationVersionNumber_iOS_7_0
-# define NSFoundationVersionNumber_iOS_7_0 1047.20
-#endif
-
-#ifndef NSFoundationVersionNumber_iOS_7_1
-# define NSFoundationVersionNumber_iOS_7_1 1047.25
-#endif
-
 static NSMutableArray *_activeWindowViews;
 
 @interface AGWindowView ()
@@ -153,14 +145,19 @@ static NSMutableArray *_activeWindowViews;
 
     CGFloat angle = 0.0;
 
-    // window rotates differently on iOS 8
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1)
+#ifdef __IPHONE_8_0
+    BOOL relativeRotation = IS_IOS_8_OR_HIGHER();
+#else
+    BOOL relativeRotation = NO;
+#endif
+
+    if (relativeRotation)
     {
-        angle = UIInterfaceOrientationAngleOfOrientation(orientation);
+        angle = UIInterfaceOrientationAngleBetween(orientation, statusBarOrientation);
     }
     else
     {
-        angle = UIInterfaceOrientationAngleBetween(orientation, statusBarOrientation);
+        angle = UIInterfaceOrientationAngleOfOrientation(orientation);
     }
 
     CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
@@ -200,6 +197,16 @@ static BOOL IS_BELOW_IOS_7()
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         answer = [[[UIDevice currentDevice] systemVersion] floatValue] < 7.0;
+    });
+    return answer;
+}
+
+static BOOL IS_IOS_8_OR_HIGHER()
+{
+    static BOOL answer;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        answer = floor([[[UIDevice currentDevice] systemVersion] floatValue]) >= 8.0;
     });
     return answer;
 }
