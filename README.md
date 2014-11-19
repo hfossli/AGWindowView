@@ -5,6 +5,8 @@ Add as many UIView's to UIWindow as you want. Specify the orientation or just fo
 
 We're using it in Agens for custom alerts, but it can be used for anything. Should not be used as the first view on window.
 
+The AGWindowView is filling the entire screen while your subviews may fill parts of the AGWindowView. 
+
 iOS 5 ~ iOS 8 and SDK's
 -----------------------
 AGWindowView is compatible with modern combinations of build SDK's and iOS system versions (iOS 5 ~ iOS 8). Make sure you use the latest tag/version.
