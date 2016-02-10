@@ -51,6 +51,6 @@ I highly encourage either to set `supportedInterfaceOrientations = AGInterfaceOr
 Cocoa pods
 -------
     
-It is added to the public cocoa pods spec repository under the name `AGWindowView`.
+It is added to the public CocoaPods spec repository under the name `AGWindowView`.
     
 [![Agens | Digital craftsmanship](http://static.agens.no/images/agens_logo_w_slogan_avenir_small.png)](http://agens.no/)
